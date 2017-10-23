@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <button type="button" data-toggle="modal" data-target="#max" class="btn">Show Code</button>
+</div>
+   
+ <div class="container">
+        <div class="row"><br /></div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h1>PROBLEM 3</h1>
+            </div>
+        </div>
+        <div class="row"><br />
+            <p>
+                The following program accepts two numbers between 1 & 100. Then iterates form 1 to 100 and prints them in ascending order. 
+                <li>For each number that is a multiple of the first number, the program prints: <b>Fizz</b></li>
+                <li>For each number that is a multiple of the seond number, the program prints: <b>Buzz</b></li>                    
+                <li>For eahc number that is a multiple of both, the program prints: <b>FizzBuzz</b></li>
+            </p>
+        </div>
+        <div class="row"><br />
+                <form>
+                    Input the first number: <input type="number" id="uno" min="1" max="100">
+                    Input the second number: <input type="number" id="dos" min="1 max='100">
+                    <button type="button" onclick="iteration()">Go!</button>
+                </form><br />
+        </div>
+        <div class="row">
+            <div class="col-xs-10">
+                <div id="numbers"></div>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" id="max" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h1 class="modal-title" id="myModalLabel">Code for Problem 3</h1>
+                    </div>
+
+                    <div class="modal-body">
+                        <pre class="brush: js; gutter: false; toolbar: false;">
+  	function iteration() {
+		var a = document.getElementById("uno").value;
+		var b = document.getElementById("dos").value;
+		var num = document.getElementById("numbers");
+		num.innerHTML = "";
+		for(var i=1; i <= 100; i++) {
+			if(((i % a) == 0)&&((i %b) == 0))
+				num.innerHTML += ('FizzBuzz') + "<br />";
+			else if((i % a) == 0)
+				num.innerHTML += ('Fizz') + "<br />";
+			else if((i % b) == 0)
+				num.innerHTML += ('Buzz') + "<br />";
+			else
+				num.innerHTML += (i) + "<br />";
+		}
+	}
+
+</pre>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    @section scripts{
+	<script>
+	function iteration() {
+		var a = document.getElementById("uno").value;
+		var b = document.getElementById("dos").value;
+		var num = document.getElementById("numbers");
+		num.innerHTML = "";
+
+		for(var i=1; i <= 100; i++) {
+			if(((i % a) == 0)&&((i %b) == 0))
+				num.innerHTML += ('FizzBuzz') + "<br />";
+			else if((i % a) == 0)
+				num.innerHTML += ('Fizz') + "<br />";
+			else if((i % b) == 0)
+				num.innerHTML += ('Buzz') + "<br />";
+			else
+				num.innerHTML += (i) + "<br />";
+		}
+	}
+	</script>}

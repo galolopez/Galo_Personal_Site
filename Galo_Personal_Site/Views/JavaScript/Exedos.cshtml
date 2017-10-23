@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <button type="button" data-toggle="modal" data-target="#max" class="btn">Show Code</button>
+</div>
+    
+<div class="container">
+        <div class="row"><br /></div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h1>PROBLEM 2</h1>
+            </div>
+        </div>
+        <div class="row"><br />
+            <div class="col-xs-12">
+                <form>
+                    Input a number to obtain its factorial:
+                    <input type="number" id="temp" min="1" max="Infinity">
+                    <button type="button" onclick="factorial()">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row"><br />
+            <div class="col-xs-12">
+                <div id="temp1"></div>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" id="max" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h1 class="modal-title" id="myModalLabel">Code for Problem 2</h1>
+                    </div>
+
+                    <div class="modal-body">
+                        <pre class="brush: js; gutter: false; toolbar: false;">
+    function factorial() {
+		var y = document.getElementById("temp").value;
+		var x = y;
+		var result = 1;
+		while(x > 1) {
+			result *= x;
+			x--;
+		}
+		window.alert("The factorial of " + y + " is: " + result);
+	}
+</pre>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+	<script>
+	function factorial() {
+		var y = document.getElementById("temp").value;
+		var x = y;
+		var result = 1;
+
+		while(x > 1) {
+			result *= x;
+			x--;
+		}
+		temp1.innerHTML = "The factorial of " + y + " is: " + result;
+	}
+	</script>}

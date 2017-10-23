@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <button type="button" data-toggle="modal" data-target="#max" class="btn">Show Code</button>
+</div>    
+
+<div class="container">
+        <div class="row"><br />  
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h1>PROBLEM 4</h1>
+            </div>
+        <div class="row"><br />
+            <div class="col-xs-12">
+                <form>
+                    The following program determines if the word is a palindrome:
+                    <input type="text" id="temp">
+                    <input type="button" onclick="palindrome()" value="Submit">
+                </form>
+            </div>            
+        </div>
+
+        <div class="row"><br />
+            <div class="col-xs-12" id="temp1"></div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" id="max" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h1 class="modal-title" id="myModalLabel">Code for Problem 4</h1>
+                    </div>
+
+                    <div class="modal-body">
+                        <pre class="brush: js; gutter: false; toolbar: false;">
+    function palindrome() {
+        var original = document.getElementById("temp").value;
+        var reverse = "";
+        var length = original.length;
+        for (var i = length - 1; i >= 0; i--)
+            reverse = reverse + original.charAt(i);
+        if (original === reverse)
+            window.alert("The entered word is a palindrome");
+        else
+            window.alert("The entered word is not a palindrome");
+    }
+</pre>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+    <script>
+    function palindrome() {
+        var original = document.getElementById("temp").value;
+        var reverse = "";
+        var length = original.length;
+
+        for (var i = length - 1; i >= 0; i--)
+            reverse = reverse + original.charAt(i);
+
+        if (original === reverse)
+            temp1.innerHTML = "The entered word is a palindrome";
+        else
+            temp1.innerHTML = "The entered word is not a palindrome";
+    }
+    </script>}
+</div>

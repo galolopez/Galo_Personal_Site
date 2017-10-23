@@ -1,0 +1,207 @@
+<div class="container-fluid">
+    <button type="button" data-toggle="modal" data-target="#max" class="btn">Show Code</button>
+</div>
+
+<div class="container"> 
+    <div class="row">
+        <h2>PROBLEM 1</h2>
+        <p>The following program accepts a series of at least 5 numbers and performs the following operations:</p>            
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <form>
+                Input a number: <input class="form-control" type="number" id="first"><br>
+                Input a number: <input class="form-control" type="number" id="second"><br>
+                Input a number: <input class="form-control" type="number" id="third"><br>
+                Input a number: <input class="form-control" type="number" id="fourth"><br>
+                Input a number: <input class="form-control" type="number" id="fifth"><br><br>
+            </form>
+        </div>
+        <div class="col-sm-2">
+            <div class="btn btn-group-vertical" role="group">
+                <button onclick="min()" class="btn btn-primary">LEAST</button>
+                <button onclick="max()" class="btn btn-primary">GREATEST</button>
+                <button onclick="mean()" class="btn btn-primary">MEAN</button>
+                <button onclick="add()" class="btn btn-primary">SUM</button>
+                <button onclick="mult()" class="btn btn-primary">MEAN</button>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div id="temp1" style="padding-top: 10px; padding-bottom: 12px"></div>
+            <div id="temp2" style="padding-bottom: 12px"></div>
+            <div id="temp3" style="padding-bottom: 12px"></div>
+            <div id="temp4" style="padding-bottom: 12px"></div>
+            <div id="temp5" style="padding-bottom: 10px"></div>
+        </div>
+    </div>
+    @*<div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <a onclick="min()" class="btn btn-primary">LEAST</a>
+            </div>
+            <div class="col-sm-2">
+                <div id="temp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a onclick="max()" class="btn btn-primary">GREATEST</a>
+            </div>
+            <div class="col-md-2">
+                <div id="temp2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a onclick="mean()" class="btn btn-primary">MEAN</a>
+            </div>
+            <div class="col-md-2">
+                <div id="temp3"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a onclick="add()" class="btn btn-primary">SUM</a>
+            </div>
+            <div class="col-md-2">
+                <div id="temp4"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a onclick="mult()" class="btn btn-primary">MEAN</a>
+            </div>
+            <div class="col-md-2">
+                <div id="temp5"></div>
+            </div>
+        </div>
+        <div class="row"><br />
+            <form>
+                Input a number: <input class="form-control" type="number" id="first"><br>
+                Input a number: <input class="form-control" type="number" id="second"><br>
+                Input a number: <input class="form-control" type="number" id="third"><br>
+                Input a number: <input class="form-control" type="number" id="fourth"><br>
+                Input a number: <input class="form-control" type="number" id="fifth"><br><br>
+            </form><br>
+        </div>
+    </div>*@
+</div>
+
+<div class="modal" id="max" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <h1 class="modal-title" id="myModalLabel">Code for Problem 1</h1>
+            </div>
+            <div class="modal-body">
+                <pre class="brush: js; gutter: false; toolbar: false;">
+
+                    function min() {
+		                var a = document.getElementById("first").value;
+		                var b = document.getElementById("second").value;
+		                var c = document.getElementById("third").value;
+		                var d = document.getElementById("fourth").value;
+		                var e = document.getElementById("fifth").value;
+		                var least = Math.min(a, b, c, d, e);
+		                temp1.innerHTML = "The least of the numbers is: " + least;
+	                }
+	
+	                function max() {
+		                var a = document.getElementById("first").value;
+		                var b = document.getElementById("second").value;
+		                var c = document.getElementById("third").value;
+		                var d = document.getElementById("fourth").value;
+		                var e = document.getElementById("fifth").value;
+		                var least = Math.max(a, b, c, d, e);
+                        temp2.innerHTML = "The least of the numbers is: " + least;
+	                }
+	
+	                function mean() {
+		                var a = document.getElementById("first").value;
+		                var b = document.getElementById("second").value;
+		                var c = document.getElementById("third").value;
+		                var d = document.getElementById("fourth").value;
+		                var e = document.getElementById("fifth").value;
+		                var avg = (+a + +b + +c + +d + +e)/5;
+		                window.alert("The mean of the numbers is: " + avg);
+	                }
+	                function add() {
+		                var a = document.getElementById("first").value;
+		                var b = document.getElementById("second").value;
+		                var c = document.getElementById("third").value;
+		                var d = document.getElementById("fourth").value;
+		                var e = document.getElementById("fifth").value;
+		                var avg = +a + +b + +c + +d + +e;
+		                window.alert("The total sum of the numbers is: " + avg);
+	                }
+	                function mult() {
+		                var a = document.getElementById("first").value;
+		                var b = document.getElementById("second").value;
+		                var c = document.getElementById("third").value;
+		                var d = document.getElementById("fourth").value;
+		                var e = document.getElementById("fifth").value;
+		                var avg = +a * +b * +c * +d * +e;
+		                window.alert("The product of the numbers is: " + avg);
+	                }
+                </pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+@section scripts{
+<script>
+    function min() {
+	    var a = document.getElementById("first").value;
+	    var b = document.getElementById("second").value;
+	    var c = document.getElementById("third").value;
+	    var d = document.getElementById("fourth").value;
+	    var e = document.getElementById("fifth").value;
+	    var least = Math.min(a, b, c, d, e);
+	    temp1.innerHTML = least;
+    }
+	
+    function max() {
+	    var a = document.getElementById("first").value;
+	    var b = document.getElementById("second").value;
+	    var c = document.getElementById("third").value;
+	    var d = document.getElementById("fourth").value;
+	    var e = document.getElementById("fifth").value;
+	    var great = Math.max(a, b, c, d, e);
+	    temp2.innerHTML = great;
+    }
+	
+    function mean() {
+	    var a = document.getElementById("first").value;
+	    var b = document.getElementById("second").value;
+	    var c = document.getElementById("third").value;
+	    var d = document.getElementById("fourth").value;
+	    var e = document.getElementById("fifth").value;
+	    var avg = (+a + +b + +c + +d + +e)/5;
+	    temp3.innerHTML = avg;
+    }
+
+    function add() {
+	    var a = document.getElementById("first").value;
+	    var b = document.getElementById("second").value;
+	    var c = document.getElementById("third").value;
+	    var d = document.getElementById("fourth").value;
+	    var e = document.getElementById("fifth").value;
+	    var add = +a + +b + +c + +d + +e;
+	    temp4.innerHTML = add;
+    }
+
+    function mult() {
+	    var a = document.getElementById("first").value;
+	    var b = document.getElementById("second").value;
+	    var c = document.getElementById("third").value;
+	    var d = document.getElementById("fourth").value;
+	    var e = document.getElementById("fifth").value;
+	    var mult = +a * +b * +c * +d * +e;
+	    temp5.innerHTML = mult;
+    }
+</script>}
