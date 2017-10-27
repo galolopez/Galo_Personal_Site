@@ -505,6 +505,7 @@
     <Content Include="img\header.jpg" />
     <Content Include="img\home-bg.jpg" />
     <Content Include="img\journey.jpg" />
+    <Content Include="img\pic.jpg" />
     <Content Include="img\portfolio\1.jpg" />
     <Content Include="img\portfolio\2.jpg" />
     <Content Include="img\portfolio\3.jpg" />
@@ -546,6 +547,7 @@
     <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="ckeditor\skins\moono\readme.md" />
     <Content Include="Content\Galo Lopez Resume.pdf" />
+    <Content Include="Content\Galo Lopez - Resume.pdf" />
     <None Include="Properties\PublishProfiles\galopersonal %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\galopersonal %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\galopersonal %284%29.pubxml" />
