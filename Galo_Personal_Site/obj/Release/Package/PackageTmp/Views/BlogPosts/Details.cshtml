@@ -1,0 +1,50 @@
+﻿@model Galo_Personal_Site.Models.BlogPost
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header style="background-image: url(@Model.MediaURL)">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
+        <div class="post-heading">
+            <h6 style="padding-top: 180px">@Model.Title</h6>
+            <h5>Posted on @Html.DisplayFor(m => Model.Created)</h5>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article style="padding-top: 75px">
+    <div class="container">
+        @*<div class="row">
+            <p style="text-align: left">@Model.Created</p>
+        </div>*@
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Body))</p>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 30px">
+            <div class="col-lg-7 col-lg-offset-2 ">
+                <div class="row" style="padding-bottom: 20px">
+                        @Html.Partial("_Create", new Galo_Personal_Site.Models.Comment() { PostId = Model.Id })
+                </div>
+                <br />
+                <div class="row" style="padding-bottom: 40px">
+                        @Html.Partial("_Index", Model.Comments)
+                </div>                                
+            </div>
+        </div>
+    </div>
+</article>
+
+@if (ViewContext.HttpContext.User.IsInRole("Admin"))
+{
+    <p style="padding-bottom: 80px; padding-top: 50px; text-align: center">
+        <b>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </b>
+    </p>
+}

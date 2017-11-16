@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Galo_Personal_Site.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <div class="media" style="padding-bottom: 50px">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="@item.Author.ProfilePic" alt="~/ProfPics/default.png" width="64" height="64">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                @Html.DisplayFor(modelItem => item.Author.Email)
+                <small>@Html.DisplayFor(modelItem => item.Created)</small>
+            </h4>
+            @Html.DisplayFor(modelItem => item.Body)
+        </div>
+
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+    {
+        <div style="word-spacing: 10px;">
+            @Html.ActionLink("Edit", "Edit", "Comments", new { id = item.Id }, null) <b>|</b>
+            @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null)
+        </div>
+    }
+    else if (ViewContext.HttpContext.User.IsInRole("Moderator"))
+    {
+        <div style="word-spacing: 10px;">
+            @Html.ActionLink("Edit", "Edit", "Comments", new { id = item.Id }, null) <b>|</b>
+            @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null)
+        </div>
+    }
+    </div>}

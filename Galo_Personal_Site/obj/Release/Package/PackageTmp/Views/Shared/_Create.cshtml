@@ -1,0 +1,23 @@
+﻿@model Galo_Personal_Site.Models.Comment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Comments", FormMethod.Post, htmlAttributes: new { @class = "form margin-top-15 clearfix" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.PostId)
+
+    <div>
+        <div class="well">
+            <label style="font-size: large" for="comment">Leave a Comment:</label>
+            <form role="form">
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+            </form>
+        </div>
+    </div>
+}
